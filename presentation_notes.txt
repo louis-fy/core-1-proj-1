@@ -1,0 +1,43 @@
+Presentation notes:
+
+Potter, M. C., & Fox, L. F. (2009). Detecting and remembering simultaneous pictures 
+in a rapid serial visual presentation. Journal of Experimental Psychology: Human 
+Perception and Performance, 35(1), 28–38. https://doi.org/10.1037/a0013624
+
+Research question:
+- Interested in visual processing ontology and the differential variables impacting 
+target detection and memory.
+- Experiment 2: Whether multiple simultaneously presented targets can be consolidated
+concurrently as easily as a single target.
+- Does the number of targets to remember impact subsequent recognition and how does
+presentation time affect this?
+
+Interest:
+- Reasoning: Many studies have investigated detection as a proxy for processing 
+ability, but memory is equally important.
+- Previous studies have demonstrated a disparity between minimum presentation times 
+for detection and memory, suggesting different processing paths?
+
+Methods:
+- 18 participants (none repeated from previous tasks)
+- 75 trials (72 + 3 practice trials)
+- Each trial: 8 frame RSVP sequence
+    -> 0-4 pictures on each frame
+    -> Equal number of pictures in each position on frame across trials
+    -> Equal likelihood of pictures in each condition being in each position
+    -> Random order of presentation
+    -> No pictures on frames 1 and 8
+    -> Presentation time: 240, 400 or 720 ms (counterbalanced between and within 
+    participants)
+- Participants asked to "view and remember" the pictures
+- 200 ms after RSVP: yes-no recognition test
+    -> 4 pictures from RSVP, 4 new pictures
+    -> Counterbalanced across trials
+    -> Pictures presented one at a time, centred, for 400 ms
+    -> After presentation: blank screen until participant response
+    -> No feedback given
+
+Implementation plan:
+
+Problems:
+- > 176 million derangements with 12 stimuli -> not feasible
