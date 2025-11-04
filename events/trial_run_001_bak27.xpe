@@ -1,0 +1,28 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpe-file, coding: cp936
+#date: Tue Nov 04 2025 21:08:53
+#sha1: dd0662
+#modules: counterbalancing.py (c83a95), stimuli_generation.py (a0c9c5)
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LmysFriend', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+3398,design,log,
+#design: #exp: RSVP Memory Test
+#design: #dvn: subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct
+#design: block_cnt,block_id,trial_cnt,trial_id
+3398,design,logged,
+3398,Experiment,started
+3416,Stimulus,presented,1
+4115,Keyboard,received,32,wait
+4150,stderr,received,'Traceback (most recent call last):'
+4150,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 117, in <module>'
+4150,stderr,received,'    run_trial(trial_num, trial, subject_key_map)'
+4150,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 93, in run_trial'
+4150,stderr,received,'    rsvp_frames, test_frames = generate_stims(trial, PICTURES_LIST, PICTURES_FOLDER, QUADRANT_MAPPING, FIXATION)'
+4151,stderr,received,'                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+4151,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\stimuli_generation.py", line 65, in generate_stims'
+4151,stderr,received,"    rsvp_frames, lookup_conds = get_rsvp(fixation, rsvp_files, trial_settings['rsvp'], source_folder, quad_map)"
+4152,stderr,received,'                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+4152,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\stimuli_generation.py", line 17, in get_rsvp'
+4152,stderr,received,'    stimuli.Picture(random.choice(mask_files), position=quad_map[quadrant])'
+4153,stderr,received,'                                  ^^^^^^^^^^'
+4153,stderr,received,"NameError: name 'mask_files' is not defined"

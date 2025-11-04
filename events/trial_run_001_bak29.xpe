@@ -1,0 +1,25 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpe-file, coding: cp936
+#date: Tue Nov 04 2025 21:13:46
+#sha1: dd0662
+#modules: counterbalancing.py (c83a95), stimuli_generation.py (e1a4b7)
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LmysFriend', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+2944,design,log,
+#design: #exp: RSVP Memory Test
+#design: #dvn: subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct
+#design: block_cnt,block_id,trial_cnt,trial_id
+2944,design,logged,
+2944,Experiment,started
+2963,Stimulus,presented,1
+3526,Keyboard,received,32,wait
+3560,stderr,received,'Traceback (most recent call last):'
+3560,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 117, in <module>'
+3561,stderr,received,'    run_trial(trial_num, trial, subject_key_map)'
+3561,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 93, in run_trial'
+3561,stderr,received,'    rsvp_frames, test_frames = generate_stims(trial, PICTURES_LIST, PICTURES_FOLDER, QUADRANT_MAPPING, FIXATION)'
+3562,stderr,received,'                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+3562,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\stimuli_generation.py", line 64, in generate_stims'
+3562,stderr,received,"    mask_files = [os.path.join(MASKS_FOLDER, f) for f in os.listdir(MASKS_FOLDER) if not f.startswith('.')]"
+3563,stderr,received,'                                                                    ^^^^^^^^^^^^'
+3563,stderr,received,"NameError: name 'MASKS_FOLDER' is not defined"

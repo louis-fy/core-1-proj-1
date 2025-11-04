@@ -1,0 +1,11 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpd-file, coding: cp936
+#date: Sun Nov 02 2025 19:04:27
+#--EXPERIMENT INFO
+#e mainfile: CORE1_Project1_1101.py
+#e sha1: 60c12f
+#e modules: 
+#e Experiment: Potter & Fox (2009) Exp 2 (Super-Block)
+#e no between subject factors
+#--SUBJECT INFO
+#s id: 2
+subject_id,trial_id,duration,test_pic_file,is_old,n_value,quadrant,response_key,rt,correct

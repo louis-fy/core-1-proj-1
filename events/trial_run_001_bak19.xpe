@@ -1,0 +1,7 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpe-file, coding: cp936
+#date: Tue Nov 04 2025 13:09:03
+#sha1: 159bf5
+#modules: counterbalancing.py (c83a95), stimuli_generation.py (f2b866)
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LmysFriend', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2

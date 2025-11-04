@@ -1,0 +1,38 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpe-file, coding: cp936
+#date: Tue Nov 04 2025 12:08:35
+#sha1: 9be146
+#modules: counterbalancing.py (c83a95), stimuli_generation.py (f2e848)
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LmysFriend', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+3010,design,log,
+#design: #exp: RSVP Memory Test
+#design: #dvn: subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct
+#design: block_cnt,block_id,trial_cnt,trial_id
+3010,design,logged,
+3010,Experiment,started
+3022,stderr,received,'Traceback (most recent call last):'
+3022,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 111, in <module>'
+3022,stderr,received,'    present_instructions(get_start_instructions(subject_key_map))'
+3022,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 43, in present_instructions'
+3022,stderr,received,'    instructions.present()'
+3022,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_visual.py", line 1171, in present'
+3023,stderr,received,'    self.preload(inhibit_ogl_compress=True)'
+3023,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_visual.py", line 1059, in preload'
+3023,stderr,received,'    self._get_surface(),'
+3024,stderr,received,'    ^^^^^^^^^^^^^^^^^^^'
+3024,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_visual.py", line 490, in _get_surface'
+3024,stderr,received,'    tmp = self._create_surface()'
+3024,stderr,received,'          ^^^^^^^^^^^^^^^^^^^^^^'
+3024,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_textscreen.py", line 482, in _create_surface'
+3025,stderr,received,'    surface.blit(box._get_surface(),'
+3025,stderr,received,'                 ^^^^^^^^^^^^^^^^^^'
+3025,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_visual.py", line 490, in _get_surface'
+3025,stderr,received,'    tmp = self._create_surface()'
+3025,stderr,received,'          ^^^^^^^^^^^^^^^^^^^^^^'
+3025,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_textbox.py", line 331, in _create_surface'
+3026,stderr,received,'    return self.render_textrect(self.format_block(_text),'
+3026,stderr,received,'           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+3026,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_textbox.py", line 406, in render_textrect'
+3026,stderr,received,'    raise Exception('
+3026,stderr,received,'Exception: Once word-wrapped,the text string was too tall to fit in the rect.'

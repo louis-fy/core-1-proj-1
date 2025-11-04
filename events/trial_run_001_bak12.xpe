@@ -1,0 +1,34 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpe-file, coding: cp936
+#date: Tue Nov 04 2025 12:54:28
+#sha1: 159bf5
+#modules: counterbalancing.py (c83a95), stimuli_generation.py (f7affa)
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='LmysFriend', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+3273,design,log,
+#design: #exp: RSVP Memory Test
+#design: #dvn: subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct
+#design: block_cnt,block_id,trial_cnt,trial_id
+3273,design,logged,
+3273,Experiment,started
+3295,Stimulus,presented,1
+3918,Keyboard,received,32,wait
+3948,stderr,received,'Exception ignored in: <function Visual.__del__ at 0x000001A676FACE00>'
+3948,stderr,received,'Traceback (most recent call last):'
+3948,stderr,received,'  File "E:\\Anaconda\\Lib\\site-packages\\expyriment\\stimuli\\_visual.py", line 266, in __del__'
+3948,stderr,received,'    if self._compression_filename is not None:'
+3948,stderr,received,'       ^^^^^^^^^^^^^^^^^^^^^^^^^^'
+3948,stderr,received,"AttributeError: 'Picture' object has no attribute '_compression_filename'"
+3949,stderr,received,'Traceback (most recent call last):'
+3949,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 116, in <module>'
+3949,stderr,received,'    run_trial(trial_num, trial, subject_key_map)'
+3949,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\trial_run.py", line 92, in run_trial'
+3949,stderr,received,'    rsvp_frames, test_frames = generate_stims(trial, PICTURES_LIST, PICTURES_FOLDER, QUADRANT_MAPPING, FIXATION)'
+3950,stderr,received,'                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+3950,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\stimuli_generation.py", line 45, in generate_stims'
+3950,stderr,received,'    test_frames = get_test(test_files, distractors, source_folder, lookup_conds)'
+3950,stderr,received,'                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+3950,stderr,received,'  File "e:\\CSFile\\CogSup\\Programming\\group_project\\core-1-proj-1\\stimuli_generation.py", line 30, in get_test'
+3950,stderr,received,"    frames[stimuli.Picture(os.path.join(source_folder, file),(0,0),size=STIMULUS_SIZE)] = {'file': file,"
+3951,stderr,received,'           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+3951,stderr,received,"TypeError: Picture.__init__() got an unexpected keyword argument 'size'"

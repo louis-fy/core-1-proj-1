@@ -1,0 +1,57 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpe-file, coding: cp936
+#date: Sun Nov 02 2025 20:09:50
+#sha1: b4d039
+#modules: 
+#display: size=(800, 600), window_mode=False, opengl=2
+#os: uname_result(system='Windows', node='LmysFriend', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+7961,stdout,received,'Loading stimuli...'
+7962,stdout,received,'WARNING: NOT ENOUGH PICTURES'
+7962,stdout,received,'Need 60, but only found 12.'
+7962,stdout,received,'REUSING pictures. This is for TESTING ONLY.'
+7962,stdout,received,'Created a temporary list of 60 reused pictures.'
+7962,stdout,received,"Loaded 40 'old' pictures and 20 'new' pictures."
+7962,stdout,received,'Using procedural grey rectangles as masks.'
+10280,design,log,
+#design: #exp: Potter & Fox (2009) Exp 2 (Super-Block)
+#design: #dvn: trial_id,duration,test_pic_file,is_old,n_value,quadrant,response_key,rt,correct
+#design: block_cnt,block_id,trial_cnt,trial_id
+10280,design,logged,
+10280,Experiment,started
+10332,Stimulus,presented,9
+15132,Keyboard,received,32,wait
+16555,Stimulus,presented,23
+17059,Stimulus,presented,22
+17469,Stimulus,presented,10
+17874,Stimulus,presented,13
+18277,Stimulus,presented,14
+18680,Stimulus,presented,17
+19083,Stimulus,presented,18
+19487,Stimulus,presented,21
+19891,Stimulus,presented,22
+20351,Stimulus,presented,24
+20561,Stimulus,presented,25
+21007,Stimulus,presented,27
+30479,Keyboard,received,121,wait
+30483,Stimulus,presented,25
+30925,Stimulus,presented,28
+34906,Keyboard,received,110,wait
+34916,Stimulus,presented,29
+35362,Stimulus,presented,31
+35983,Keyboard,received,110,wait
+35987,Stimulus,presented,29
+36443,Stimulus,presented,32
+36955,Keyboard,received,110,wait
+36958,Stimulus,presented,25
+37404,Stimulus,presented,33
+38237,Keyboard,received,121,wait
+38240,Stimulus,presented,29
+38688,Stimulus,presented,34
+40799,Keyboard,received,121,wait
+40802,Stimulus,presented,29
+41246,Stimulus,presented,35
+41856,Experiment,paused
+41861,Stimulus,presented,36
+43256,Keyboard,received,y,wait_char
+43256,Experiment,ended
+43277,Stimulus,presented,36

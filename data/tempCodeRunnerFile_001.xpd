@@ -1,0 +1,25 @@
+#Expyriment 1.0.0 (Python 3.12.7), .xpd-file, coding: cp936
+#date: Tue Nov 04 2025 19:49:50
+#--EXPERIMENT INFO
+#e mainfile: tempCodeRunnerFile.py
+#e sha1: b192e4
+#e modules: counterbalancing.py (c83a95), stimuli_generation.py (533688)
+#e Experiment: RSVP Memory Test
+#e no between subject factors
+#--SUBJECT INFO
+#s id: 1
+subject_id,subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct
+1,1,1,False,NA,NA,N003.bmp.jpg,240,2811,False
+1,1,1,True,3,1,kid_bicycle.jpg,240,858,False
+1,1,1,False,NA,NA,N004.bmp.jpg,240,429,False
+1,1,1,True,2,3,fruits.jpg,240,569,False
+1,1,1,False,NA,NA,N002.bmp.jpg,240,353,False
+1,1,1,True,2,4,gorilla.jpg,240,534,False
+1,1,1,True,3,4,holding_hands.jpg,240,31,True
+1,1,1,False,NA,NA,N001.bmp.jpg,240,8,False
+1,1,2,False,NA,NA,N015.bmp.jpg,720,144,False
+1,1,2,False,NA,NA,N013.bmp.jpg,720,143,False
+1,1,2,True,3,4,N016.bmp.jpg,720,35,True
+1,1,2,False,NA,NA,N011.bmp.jpg,720,0,False
+1,1,2,False,NA,NA,N014.bmp.jpg,720,1,True
+1,1,2,True,3,2,N018.bmp.jpg,720,1,True
