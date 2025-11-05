@@ -6,7 +6,7 @@ from stimuli_generation import *
 
 
 """ Constants """
-DEMO = False
+DEMO = True
 KEYS = [K_f, K_j]
 KEYS_TO_MAPPING = [{K_f:True, K_j:False}, {K_f:False, K_j:True}]
 WD = os.path.dirname(os.path.abspath(__file__))
@@ -85,7 +85,7 @@ def get_mid_instructions(subject_key_map):
 exp = design.Experiment(name="RSVP Memory Test", background_colour=C_BLACK, foreground_colour=C_WHITE)
 exp.add_data_variable_names(['subject_id','trial_n', 'trial_type', 'n_stims', 'stim_position', 'filename', 'pres_time', 'RT', 'correct'])
 
-control.set_develop_mode()
+#control.set_develop_mode()
 control.initialize(exp)
 
 """ Stimulus Constants """
