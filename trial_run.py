@@ -18,7 +18,7 @@ QUADRANT_MAPPING = {1:(-165, 115),
                     2:(165, 115), 
                     3:(165, -115), 
                     4:(-165, -115)}
-N_BLOCKS = 3
+N_BLOCKS = 15
 N_TRIALS = 5 * N_BLOCKS
 N_PRACTICE_TRIALS = 3
 TRIAL_SIZE = 6
@@ -43,7 +43,7 @@ def present_for(stims, t=1000):
     exp.clock.wait(t - dt)
 
 def present_instructions(text):
-    instructions = stimuli.TextScreen(text=text, text_justification=0, heading="Instructions", text_size=12)
+    instructions = stimuli.TextScreen(text=text, text_justification=0, heading="Instructions")
     instructions.present()
     exp.keyboard.wait()
 
@@ -85,7 +85,7 @@ def get_mid_instructions(subject_key_map):
 exp = design.Experiment(name="RSVP Memory Test", background_colour=C_BLACK, foreground_colour=C_WHITE)
 exp.add_data_variable_names(['subject_id','trial_n', 'trial_type', 'n_stims', 'stim_position', 'filename', 'pres_time', 'RT', 'correct'])
 
-control.set_develop_mode()
+#control.set_develop_mode()
 control.initialize(exp)
 
 """ Stimulus Constants """
@@ -108,7 +108,7 @@ def run_trial(trial_num, trial, subject_key_map):
         correct = subject_key_map[key] == test_frames[frame]['test']
         exp.data.add([exp.subject, trial_num, test_frames[frame]['test'], test_frames[frame]['total_stims'], test_frames[frame]['quad'], test_frames[frame]['file'], trial['dur'], rt, correct])
 
-control.start(subject_id=2)
+control.start()
 
 subject_key_map = KEYS_TO_MAPPING[(exp.subject-1) % 2]
 
