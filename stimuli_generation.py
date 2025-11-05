@@ -2,44 +2,36 @@ from expyriment import stimuli
 from expyriment.misc.constants import C_WHITE, C_BLACK
 import random, os
 
-STIMULUS_SIZE = (300, 200)
-
-WD = os.path.dirname(os.path.abspath(__file__))
-MASKS_FOLDER = os.path.join(WD, 'masks')
-mask_files = [os.path.join(MASKS_FOLDER, f) for f in os.listdir(MASKS_FOLDER) if not f.startswith('.')]
 def load(stims):
     for stim in stims:
         stim.preload()
 
-
-def get_rsvp(fixation, rsvp_files, frame_list, source_folder, quad_map):
+def get_rsvp(fixation, rsvp_files, mask_files, frame_list, source_folder, quad_map):
     lookup_conds = {}
-    pre_frame_stims = [fixation] + [
+    frames = [[fixation] + [
         stimuli.Picture(random.choice(mask_files), position=quad_map[quadrant])
         for quadrant in quad_map.keys()
-    ]
-    frames = [pre_frame_stims]
+    ]]
 
     for frame in frame_list:
         stims = [fixation]
         for quadrant in frame:
             picture_file = rsvp_files.pop()
-            pic = stimuli.Picture(os.path.join(source_folder, picture_file), 
-                                  position=quad_map[quadrant])
-            stims.append(pic)
+            stims.append(stimuli.Picture(os.path.join(source_folder, picture_file), 
+                                  position=quad_map[quadrant]))
             lookup_conds[picture_file] = {'quad': quadrant, 'total_stims': len(frame)}
-        #mask
+        # Masks
         for quadrant in quad_map.keys():
             if quadrant not in frame:
                 stims.append(stimuli.Picture(random.choice(mask_files), 
                                             position=quad_map[quadrant]))
         frames.append(stims)
     
-    post_frame_stims = [fixation] + [
+    frames.append([fixation] + [
         stimuli.Picture(random.choice(mask_files), position=quad_map[quadrant])
         for quadrant in quad_map.keys()
-    ]
-    frames.append(post_frame_stims)
+    ])
+    
     return frames, lookup_conds
 
 def get_test(test_files, distractor_files, source_folder, lookup_conds):
@@ -53,7 +45,7 @@ def get_test(test_files, distractor_files, source_folder, lookup_conds):
                                                                             'total_stims': lookup_conds[file]['total_stims'] if file in test_files else 'NA'}
     return frames
 
-def generate_stims(trial_settings, pictures_list, source_folder, quad_map, fixation):
+def generate_stims(trial_settings, pictures_list, mask_files, source_folder, quad_map, fixation):
     rsvp_files = [pictures_list[id] for id in trial_settings['rsvp_pics']]
     random.shuffle(rsvp_files)
     test_files = [pictures_list[id] for id in trial_settings['test_pics']]
@@ -61,10 +53,7 @@ def generate_stims(trial_settings, pictures_list, source_folder, quad_map, fixat
     distractors = [pictures_list[id] for id in trial_settings['distractors']]
     random.shuffle(distractors)
    
-    
-    
-
-    rsvp_frames, lookup_conds = get_rsvp(fixation, rsvp_files, trial_settings['rsvp'], source_folder, quad_map)
+    rsvp_frames, lookup_conds = get_rsvp(fixation, rsvp_files, mask_files, trial_settings['rsvp'], source_folder, quad_map)
     test_frames = get_test(test_files, distractors, source_folder, lookup_conds)
 
     load([e for frame in rsvp_frames for e in frame] + list(test_frames.keys()))

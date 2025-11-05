@@ -6,11 +6,14 @@ from stimuli_generation import *
 
 
 """ Constants """
+DEMO = True
 KEYS = [K_f, K_j]
 KEYS_TO_MAPPING = [{K_f:True, K_j:False}, {K_f:False, K_j:True}]
 WD = os.path.dirname(os.path.abspath(__file__))
 PICTURES_FOLDER = os.path.join(WD, 'stimuli')
+MASKS_FOLDER = os.path.join(WD, 'masks')
 PICTURES_LIST = [f for f in os.listdir(PICTURES_FOLDER) if f.endswith(('.jpg', '.jpeg'))]
+MASK_LIST = [os.path.join(MASKS_FOLDER, f) for f in os.listdir(MASKS_FOLDER) if f.endswith(('.jpg', '.jpeg'))]
 QUADRANT_MAPPING = {1:(-165, 115), 
                     2:(165, 115), 
                     3:(165, -115), 
@@ -40,7 +43,7 @@ def present_for(stims, t=1000):
     exp.clock.wait(t - dt)
 
 def present_instructions(text):
-    instructions = stimuli.TextScreen(text=text, text_justification=0, heading="Instructions", text_size=10)
+    instructions = stimuli.TextScreen(text=text, text_justification=0, heading="Instructions", text_size=12)
     instructions.present()
     exp.keyboard.wait()
 
@@ -90,7 +93,7 @@ FIXATION = stimuli.FixCross(colour=C_WHITE)
 
 """ Experiment """
 def run_trial(trial_num, trial, subject_key_map):
-    rsvp_frames, test_frames = generate_stims(trial, PICTURES_LIST, PICTURES_FOLDER, QUADRANT_MAPPING, FIXATION)
+    rsvp_frames, test_frames = generate_stims(trial, PICTURES_LIST, MASK_LIST, PICTURES_FOLDER, QUADRANT_MAPPING, FIXATION)
     present_for([FIXATION], 500)
     #RSVP
     for frame in rsvp_frames:
@@ -105,13 +108,15 @@ def run_trial(trial_num, trial, subject_key_map):
         correct = subject_key_map[key] == test_frames[frame]['test']
         exp.data.add([exp.subject, trial_num, test_frames[frame]['test'], test_frames[frame]['total_stims'], test_frames[frame]['quad'], test_frames[frame]['file'], trial['dur'], rt, correct])
 
-control.start(subject_id=1)
+control.start(subject_id=2)
 
 subject_key_map = KEYS_TO_MAPPING[(exp.subject-1) % 2]
 
 present_instructions(get_start_instructions(subject_key_map))
 
 for trial_num, trial in get_trials(exp.subject).items():
+    if DEMO and trial_num > 4:
+        break
     if trial_num == N_PRACTICE_TRIALS + 1:
         present_instructions(get_mid_instructions(subject_key_map))
     run_trial(trial_num, trial, subject_key_map)
