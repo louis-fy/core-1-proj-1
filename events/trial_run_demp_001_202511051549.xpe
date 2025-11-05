@@ -1,0 +1,7 @@
+#Expyriment 1.0.0 (Python 3.13.7), .xpe-file, coding: UTF-8
+#date: Wed Nov 05 2025 15:49:45
+#sha1: 536d3c
+#modules: counterbalancing.py (dc81bc), stimuli_generation.py (f4c60f)
+#display: size=(800, 600), window_mode=False, opengl=2
+#os: uname_result(system='Darwin', node='LFY-Macbook.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Mon Aug 11 21:16:30 PDT 2025; root:xnu-11417.140.69.701.11~1/RELEASE_ARM64_T8132', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2

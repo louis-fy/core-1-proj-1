@@ -1,0 +1,11 @@
+#Expyriment 1.0.0 (Python 3.13.7), .xpd-file, coding: UTF-8
+#date: Wed Nov 05 2025 15:44:39
+#--EXPERIMENT INFO
+#e mainfile: trial_run.py
+#e sha1: 776131
+#e modules: counterbalancing.py (dc81bc), stimuli_generation.py (f4c60f)
+#e Experiment: RSVP Memory Test
+#e no between subject factors
+#--SUBJECT INFO
+#s id: 7
+subject_id,subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct

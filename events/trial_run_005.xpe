@@ -1,0 +1,19 @@
+#Expyriment 1.0.0 (Python 3.13.7), .xpe-file, coding: UTF-8
+#date: Wed Nov 05 2025 15:38:42
+#sha1: b7d5e0
+#modules: counterbalancing.py (dc81bc), stimuli_generation.py (f4c60f)
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Darwin', node='LFY-Macbook.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Mon Aug 11 21:16:30 PDT 2025; root:xnu-11417.140.69.701.11~1/RELEASE_ARM64_T8132', machine='arm64')
+Time,Type,Event,Value,Detail,Detail2
+1411,design,log,
+#design: #exp: RSVP Memory Test
+#design: #dvn: subject_id,trial_n,trial_type,n_stims,stim_position,filename,pres_time,RT,correct
+#design: block_cnt,block_id,trial_cnt,trial_id
+1411,design,logged,
+1411,Experiment,started
+1411,stdout,received,'800'
+1425,Stimulus,presented,1
+2832,Experiment,paused
+2844,Stimulus,presented,2
+3559,Keyboard,received,y,wait_char
+3559,Experiment,ended

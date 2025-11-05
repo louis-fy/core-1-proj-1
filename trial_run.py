@@ -42,22 +42,26 @@ def present_for(stims, t=1000):
     dt = timed_draw(stims)
     exp.clock.wait(t - dt)
 
-def present_instructions(text):
-    instructions = stimuli.TextScreen(text=text, text_justification=0, heading="Instructions")
+def present_instructions(text, exp):
+    w, _ = exp.screen.size
+    instructions = stimuli.TextScreen(text=text, text_justification=0, heading="Instructions", heading_size=int(12*800//w), text_size=int(12*800//w))
     instructions.present()
     exp.keyboard.wait()
 
 def get_trials(subject_id):
-    pres_times = get_pres_times(N_TRIALS)
-    pictures_ids = get_pictures(len(PICTURES_LIST),PICTURES_PER_TRIAL,N_TRIALS,subject_id)
-    rsvp_orders = get_rsvps(N_BLOCKS,TRIAL_SIZE,PICTURES_PER_RSVP)
+    full_trial_data, n_trials_total = get_rsvps(N_BLOCKS, TRIAL_SIZE, PICTURES_PER_RSVP)
+    pictures_ids = get_pictures(len(PICTURES_LIST), PICTURES_PER_TRIAL, n_trials_total, subject_id)
     trials = {}
-    for i in range(N_TRIALS):
-        trials[i+1] = {'dur': pres_times[i],
-                       'rsvp_pics': pictures_ids[i+1][0] + pictures_ids[i+1][1],
-                       'test_pics': pictures_ids[i+1][1],
-                       'distractors': pictures_ids[i+1][2],
-                       'rsvp': rsvp_orders[i]}
+    for i, trial_data in enumerate(full_trial_data):
+        trial_num = i + 1
+        picture_data = pictures_ids[trial_num] 
+        trials[trial_num] = {
+            'dur': trial_data['dur'],
+            'rsvp': trial_data['rsvp_seq'], 
+            'rsvp_pics': picture_data[0] + picture_data[1],
+            'test_pics': picture_data[1],
+            'distractors': picture_data[2],
+        }
     return trials
 
 def get_start_instructions(subject_key_map):
@@ -112,15 +116,15 @@ control.start()
 
 subject_key_map = KEYS_TO_MAPPING[(exp.subject-1) % 2]
 
-present_instructions(get_start_instructions(subject_key_map))
+present_instructions(get_start_instructions(subject_key_map), exp)
 
 for trial_num, trial in get_trials(exp.subject).items():
     if DEMO and trial_num > 4:
         break
     if trial_num == N_PRACTICE_TRIALS + 1:
-        present_instructions(get_mid_instructions(subject_key_map))
+        present_instructions(get_mid_instructions(subject_key_map), exp)
     run_trial(trial_num, trial, subject_key_map)
 
-present_instructions(end_instructions)
+present_instructions(end_instructions, exp)
 
 control.end()
